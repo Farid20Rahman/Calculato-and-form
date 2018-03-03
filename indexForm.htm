@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Student Bio-data Form</title>
+
+	<style>
+		body {
+			padding: 50px 0;
+            font-family:"Helvetica Nueu", arial , Sans-serif;
+            margin-left:100px;
+            background-color: bisque;
+		}
+        h3{
+            opacity:0.75;
+        }
+            
+        }
+		#message1 {
+			margin-top: 20px;
+		}
+	</style>
+
+</head>
+<body>
+	
+    <h3>Student Biodata Form</h3>
+	<p>Fill the fields appropraitely. click elsewhere to continue</p>
+
+	<div id="formArea1"> 
+        
+		<form action="" id="form1">
+		First Name:
+		<input type="text" onblur="checkForNext()" 
+		id="firstName">
+		Last Name:
+		<input type="text" onblur="checkForNext()" 
+			id="lastName">
+		</form>
+		</div>
+		<div id="message1">
+		</div>
+
+	<div id="formArea2">
+		<form action = "" id = "form2">
+		Phone number:
+		<input type="nuumber" onblur="checkForNextOne()" 
+		id="contactNumber" placeholder="+234...">
+		</form>
+		</div>
+		<div id = "message2">
+		</div>
+
+	<div id= "formArea3">
+		<form action="" id= "form3">
+		Postal:
+		<input type= "number"  onblur = "checkForNextTwo()" id= "postal" placholder ="1000011">
+		</form>
+		</div>
+		<div id = "message3">
+		</div>
+
+	<div id = "formArea4">
+		<form action="" id = "form4"> 
+		State:
+		<input type="text" onblur="checkForNextThree()" id = "state" placeholder="state of origin">
+		local government area: 
+		<input type="text" onblur="checkForNextThree()" id = "LGA" placeholder= "your local government area" >
+		</form>
+		</div>
+		<div id = "message4">
+		</div>
+	
+	<div id = "formArea5">
+			<form action="" id = "form5"> 
+			Gender:
+			<input type="text" onblur="checkForNextFour()" id = "Gender" placeholder="male or female" >
+			</form>
+			</div>
+			<div id = "message5">
+			</div>
+
+	<div id = "formArea6">
+			<form action="" id = "form6"> 
+			Email Address:
+			<input type="textbox" onblur="checkForNextFive()" id = "about" placeholder="example@gmail.com" >
+			</form>
+			</div>
+			<div id = "message6">
+			</div>
+
+	<div id = "formArea7">
+			<form action="" id = "form7"> 
+			Faculty: 
+			<input type="text" onblur="checkForNextSix()" id = "faculty" placeholder="enter your faculty">
+			Department:
+			<input type="text" onblur="checkForNextSix()" id = "Department" placeholder="enter your department">
+			</form>
+			</div>
+			<div id = "message7">
+			</div>
+
+	<div id = "formArea8">
+			<form action="" id = "form8"> 
+			Course: 
+			<input type="text" onblur = "checkForNextSeven()" id  = "course" placeholder="enter your course"> 
+			</form>
+			</div>
+			<div id = "message8">
+			</div>
+
+	<div id = "formArea9">
+			<form action="" id = "form9"> 
+			Date of Birth:
+			<input type="number" onblur="checkForNextEight()" id = "date" placeholder="enter your date of birth">
+			</form>
+			</div>
+			<div id = "message9">
+			</div>
+
+	<div id = "formArea10">
+			<form action="" id = "form10"> 
+			Year:
+			<input type="text" onblur="checkForNextNine()" id = "state" placeholder="100 lvl">
+			</form>
+			</div>
+			<div id ="message10">
+			</div>
+
+
+	<script>
+		
+		var formArea1 = document.getElementById('formArea1');
+		var formArea2 = document.getElementById('formArea2');
+		var formArea3 = document.getElementById('formArea3');
+		var formArea4 = document.getElementById('formArea4');
+		var formArea5 = document.getElementById('formArea5');
+		var formArea6 = document.getElementById('formArea6');
+		var formArea7 = document.getElementById('formArea7');
+		var formArea8 = document.getElementById('formArea8');
+		var formArea9 = document.getElementById('formArea9');
+		var formArea10 = document.getElementById('formArea10');
+		;
+		
+		formArea2.style.display = 'none';
+		formArea3.style.display = 'none'; 
+		formArea4.style.display = 'none';
+		formArea5.style.display = 'none';
+		formArea6.style.display = 'none';
+		formArea7.style.display = 'none';
+		formArea8.style.display = 'none';
+		formArea9.style.display = 'none';
+		formArea10.style.display = 'none';
+	
+	 
+		
+
+		var msg1 = document.getElementById('message1');
+		var firstName = document.getElementById('firstName');
+		var lastName = document.getElementById('lastName');
+		function checkForNext(){
+			if (firstName.value != "" && lastName.value != "") {
+				console.log("Both filled");
+				setTimeout(function(){ msg1.innerHTML = " "; }, 500);
+
+			  //setTimeout(function(){
+					//formArea1.style.display = "none";
+				// }, 1500);
+
+				setTimeout(function(){ formArea2.style.display = "block";}, 2000);
+					}
+				}
+
+		var msg2 = document.getElementById('message2');
+		var contactNUmber = document.getElementById('contactNUmber');
+		function checkForNextOne(){
+			if( contactNumber.value != "") {
+				console.log("filled");
+				setTimeout(function(){ msg2.innerHTML = " "; }, 500);
+				setTimeout(function(){ formArea3.style.display = "block";}, 2000);
+					}
+			}
+		
+			var msg3 = document.getElementById('message3');
+			var Postal = document.getElementById('postal');
+			function checkForNextTwo(){
+				if (postal.value != "") {
+					console.log("Filled");
+					setTimeout(function(){ msg3.innerHTML = " ";}, 500);
+					setTimeout(function(){ formArea4.style.display = "block";}, 2000);
+				}
+			}
+
+			var msg4 = document.getElementById('message4'); 
+			var state1 = document.getElementById('state');
+			var lga = document.getElementById('LGA');
+			function checkForNextThree(){
+				if( state1.value != "" && lga.value != ""){
+					console.log("Both filled"); 
+					setTimeout(function(){msg4.innerHTML=" "}, 500); 
+					setTimeout(function(){formArea5.style.display = "block";}, 2000); 
+				}
+			}
+
+				
+			var msg5 = document.getElementById('message5'); 
+			var looks = document.getElementById('Gender'); 
+			function checkForNextFour(){
+				if(looks.value != ""){
+					console.log("filled"); 
+					setTimeout(function(){msg5.innerHTML=" "}, 500); 
+					setTimeout(function(){formArea6.style.display = "block";}, 2000); 
+				}
+			}
+
+			var msg6 = document.getElementById('message6'); 
+			var about = document.getElementById('about'); 
+			function checkForNextFive(){
+				if(about.value != ""){
+					console.log("filled"); 
+					setTimeout(function(){msg6.innerHTML="please wait..."}, 500); 
+					setTimeout(function(){formArea7.style.display = "block";}, 2000); 
+				}
+			}
+
+			var msg7 = document.getElementById('message7'); 
+			var faculty = document.getElementById('faculty');
+			var department = document.getElementById('Department'); 
+			function checkForNextSix(){
+				if(faculty.value != "" && department.value != ""){
+					console.log("filled"); 
+					setTimeout(function(){msg7.innerHTML=" "}, 500); 
+					setTimeout(function(){formArea8.style.display = "block";}, 2000); 
+				}
+			}
+
+			var msg8 = document.getElementById('message8'); 
+			var course = document.getElementById('course'); 
+			function checkForNextSeven(){
+				if(course.value != ""){
+					console.log("filled"); 
+					setTimeout(function(){msg8.innerHTML=" "}, 500); 
+					setTimeout(function(){formArea9.style.display = "block";}, 2000); 
+				}
+			}
+
+			var msg9 = document.getElementById('message9'); 
+			var date  = document.getElementById('date'); 
+			function checkForNextEight(){
+				if(date.value != ""){
+					console.log("filled"); 
+					setTimeout(function(){msg.innerHTML=" "}, 500); 
+					setTimeout(function(){formArea10.style.display = "block";}, 2000); 
+				}
+			}
+
+			
+			var msg10 = document.getElementById('message10');
+			var year = document.getElementById('Year'); 
+			function checkForNextNine(){
+				if(year.value != ""){
+					console.log("filled"); 
+					setTimeout(function(){msg10.innerHTML=" "}, 500); 
+					setTimeout(function(){formArea.style.display = "block";}, 2000); 
+				}
+			}
+
+
+	</script>
+
+</body>
+</html>
